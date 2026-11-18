@@ -39,8 +39,7 @@
   /* Cada "página" replica el formato de la cartilla */
   .pagina {
     position: relative;
-    max-width: 860px;
-    margin: 0 auto;
+    width: 100%;
     min-height: 100vh;
     padding: 0 1.5rem 3.5rem;
     background-color: var(--negro);
@@ -49,6 +48,7 @@
       var(--foto, none);
     background-size: cover;
     background-position: center 35%;
+    background-attachment: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +60,7 @@
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    max-width: none;
+    max-width: 1000px;
     padding: 1.1rem 0;
     font-size: .78rem;
     letter-spacing: .18em;
@@ -151,40 +151,7 @@
 </head>
 <body>
 
-<!-- PÁGINA 1: qué incluye -->
-<main>
-<section class="pagina">
-  <div class="barra">
-    <a href="https://instagram.com/camilaescandarweddings" target="_blank" rel="noopener">@camilaescandarweddings</a>
-    <a href="https://camilaescandar.mypixieset.com/" target="_blank" rel="noopener">camilaescandar.mypixieset.com</a>
-  </div>
-
-  <header class="marca">
-    <div class="logo">
-      <h1>Camila Escandar</h1>
-      <span class="studio">studio</span>
-    </div>
-  </header>
-
-  <div class="banda">
-    <img src="img/ceremonia.jpg" alt="Novios tomados de la mano durante la ceremonia" onerror="this.parentNode.remove()">
-  </div>
-
-  <div>
-    <h2 class="izq">Incluye, en ambas fechas:</h2>
-    <ul class="incluye">
-      <li><strong>Cobertura en matrimonios dentro de Santiago.</strong></li>
-      <li><strong>Fotografías retocadas en alta definición.</strong></li>
-      <li>Cantidad de fotos ilimitadas.</li>
-      <li>Galería online a través de link (duración de 6 meses) con descargas ilimitadas.</li>
-      <li>Entrega del material: dentro de los 30 días.</li>
-      <li class="regalo">REGALO: Selección de fotografías Instax impresas al momento, para que puedan llevarse algunos recuerdos físicos de ese día incluso antes de recibir su galería completa digital.</li>
-    </ul>
-    <p class="nota">La fecha queda reservada una vez firmado el contrato y abonado el 50% del monto final.</p>
-  </div>
-</section>
-
-<!-- PÁGINA 2: tarifas -->
+<!-- PÁGINA 1: tarifas -->
 <!-- Para cambiar un precio:
      data-neto  = valor neto (el IVA y el total se calculan solos).
      data-final = precio final con IVA incluido (el neto y el IVA se desglosan solos). -->
@@ -249,6 +216,39 @@
          o por <a href="https://wa.me/56912345678">WhatsApp</a>. -->
   </p>
 </section>
+<!-- PÁGINA 2: qué incluye -->
+<main>
+<section class="pagina" id="incluye" style="--foto: url('img/anillos.jpg');">
+  <div class="barra">
+    <a href="https://instagram.com/camilaescandarweddings" target="_blank" rel="noopener">@camilaescandarweddings</a>
+    <a href="https://camilaescandar.mypixieset.com/" target="_blank" rel="noopener">camilaescandar.mypixieset.com</a>
+  </div>
+
+  <header class="marca">
+    <div class="logo">
+      <h1>Camila Escandar</h1>
+      <span class="studio">studio</span>
+    </div>
+  </header>
+
+  <div class="banda">
+    <img src="img/ceremonia.jpg" alt="Novios tomados de la mano durante la ceremonia" onerror="this.parentNode.remove()">
+  </div>
+
+  <div>
+    <h2 class="izq">Incluye, en ambas fechas:</h2>
+    <ul class="incluye">
+      <li><strong>Cobertura en matrimonios dentro de Santiago.</strong></li>
+      <li><strong>Fotografías retocadas en alta definición.</strong></li>
+      <li>Cantidad de fotos ilimitadas.</li>
+      <li>Galería online a través de link (duración de 6 meses) con descargas ilimitadas.</li>
+      <li>Entrega del material: dentro de los 30 días.</li>
+      <li class="regalo">REGALO: Selección de fotografías Instax impresas al momento, para que puedan llevarse algunos recuerdos físicos de ese día incluso antes de recibir su galería completa digital.</li>
+    </ul>
+    <p class="nota">La fecha queda reservada una vez firmado el contrato y abonado el 50% del monto final.</p>
+  </div>
+</section>
+
 </main>
 
 <script>
