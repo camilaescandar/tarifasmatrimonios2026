@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camila Escandar Studio · Matrimonios y parejas</title>
+<meta name="description" content="Fotografía de matrimonios y parejas. Qué incluye cada cobertura y tarifas.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #000000;
+    --blanco: #ffffff;
+    --blanco-suave: rgba(255,255,255,.82);
+    --linea: rgba(255,255,255,.7);
+    --rosa: #edb4be;
+    --serif-display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+    --serif-texto: "Cormorant Garamond", "Garamond", Georgia, serif;
+    --script: "Pinyon Script", "Snell Roundhand", cursive;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: var(--serif-texto);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--rosa); text-underline-offset: 4px; }
+  a:hover, a:focus-visible { color: var(--rosa); }
+  a:focus-visible { outline: 2px solid var(--rosa); outline-offset: 4px; }
+
+  /* Cada "página" replica el formato de la cartilla */
+  .pagina {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 0 1.5rem 3.5rem;
+    background-color: var(--negro);
+    background-image:
+      linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.62)),
+      var(--foto, none);
+    background-size: cover;
+    background-position: center 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pagina > * { width: 100%; max-width: 680px; }
+
+  .barra {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: none;
+    padding: 1.1rem 0;
+    font-size: .78rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .marca { text-align: center; margin: 3.5rem 0 2.5rem; }
+  .marca .logo { display: inline-block; text-align: right; }
+  .marca h1 {
+    margin: 0;
+    font-family: var(--serif-display);
+    font-weight: 500;
+    font-size: clamp(2.1rem, 8.5vw, 3.6rem);
+    letter-spacing: .02em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .marca .studio {
+    display: block;
+    margin-top: -.15em;
+    padding-right: .4rem;
+    font-family: var(--script);
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    line-height: 1;
+  }
+
+  .presentacion { text-align: center; margin-bottom: 3rem; }
+  .presentacion .rubro { font-size: 1.35rem; margin: 0 0 .6rem; }
+  .presentacion .frase { font-style: italic; margin: 0; color: var(--blanco-suave); }
+
+  .banda { margin: 0 0 3rem; }
+  .banda img { display: block; width: 100%; height: auto; }
+
+  h2 {
+    font-family: var(--serif-texto);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 .6rem;
+  }
+  h2.izq { text-align: left; font-size: 1.3rem; text-transform: none; letter-spacing: .01em; font-style: normal; }
+
+  ul.incluye { list-style: none; margin: 1rem 0 0; padding: 0; }
+  ul.incluye li { position: relative; padding-left: 1.4rem; margin-bottom: .55rem; }
+  ul.incluye li::before {
+    content: "";
+    position: absolute; left: 0; top: .72em;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blanco);
+  }
+  ul.incluye li strong { font-weight: 600; }
+  .regalo { margin-top: 1.1rem; }
+
+  .nota { margin-top: 2.2rem; font-size: 1rem; color: var(--blanco-suave); }
+
+  /* Tablas de tarifas */
+  .bloque { margin-bottom: 2.6rem; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th, tbody td, tbody th { padding: .7rem .5rem; }
+  thead tr { border-top: 1px solid var(--linea); }
+  tbody tr:last-child { border-bottom: 1px solid var(--linea); }
+  th[scope="row"] { text-align: left; font-weight: 400; width: 38%; border-right: 1px solid var(--linea); padding-left: 0; }
+  thead th { font-weight: 400; text-align: center; }
+  thead th:first-child { text-align: left; padding-left: 0; border-right: 1px solid var(--linea); }
+  tbody td { text-align: center; font-variant-numeric: lining-nums tabular-nums; }
+  tr.total th, tr.total td { font-weight: 600; font-size: 1.3rem; padding-top: .9rem; padding-bottom: .9rem; }
+  tr.total { border-top: 1px solid rgba(255,255,255,.35); }
+  tr.iva th, tr.iva td { color: var(--blanco-suave); }
+
+  .extras { margin: 0 0 .4rem; }
+  .extras p { margin: 0 0 .4rem; }
+  .extras strong { font-weight: 600; }
+
+  .pie-precios { margin-top: 2rem; font-style: italic; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: 1rem; }
+
+  .reservar { margin-top: 2.2rem; }
+  .reservar a { font-size: 1.15rem; }
+
+  @media (min-width: 720px) {
+    body { font-size: 1.3rem; }
+    .pagina { padding-bottom: 5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1: qué incluye -->
+<main>
+<section class="pagina">
+  <div class="barra">
+    <a href="https://instagram.com/camilaescandarweddings" target="_blank" rel="noopener">@camilaescandarweddings</a>
+    <a href="https://camilaescandar.mypixieset.com/" target="_blank" rel="noopener">camilaescandar.mypixieset.com</a>
+  </div>
+
+  <header class="marca">
+    <div class="logo">
+      <h1>Camila Escandar</h1>
+      <span class="studio">studio</span>
+    </div>
+  </header>
+
+  <div class="banda">
+    <img src="img/ceremonia.jpg" alt="Novios tomados de la mano durante la ceremonia" onerror="this.parentNode.remove()">
+  </div>
+
+  <div>
+    <h2 class="izq">Incluye, en ambas fechas:</h2>
+    <ul class="incluye">
+      <li><strong>Cobertura en matrimonios dentro de Santiago.</strong></li>
+      <li><strong>Fotografías retocadas en alta definición.</strong></li>
+      <li>Cantidad de fotos ilimitadas.</li>
+      <li>Galería online a través de link (duración de 6 meses) con descargas ilimitadas.</li>
+      <li>Entrega del material: dentro de los 30 días.</li>
+      <li class="regalo">REGALO: Selección de fotografías Instax impresas al momento, para que puedan llevarse algunos recuerdos físicos de ese día incluso antes de recibir su galería completa digital.</li>
+    </ul>
+    <p class="nota">La fecha queda reservada una vez firmado el contrato y abonado el 50% del monto final.</p>
+  </div>
+</section>
+
+<!-- PÁGINA 2: tarifas -->
+<!-- Para cambiar un precio:
+     data-neto  = valor neto (el IVA y el total se calculan solos).
+     data-final = precio final con IVA incluido (el neto y el IVA se desglosan solos). -->
+<section class="pagina" id="tarifas" style="--foto: url('img/pareja.jpg');">
+  <div class="barra">
+    <a href="https://instagram.com/camilaescandarweddings" target="_blank" rel="noopener">@camilaescandarweddings</a>
+    <a href="https://camilaescandar.mypixieset.com/" target="_blank" rel="noopener">camilaescandar.mypixieset.com</a>
+  </div>
+
+  <header class="marca">
+    <div class="logo">
+      <h1>Camila Escandar</h1>
+      <span class="studio">studio</span>
+    </div>
+  </header>
+
+  <div class="presentacion">
+    <p class="rubro">Fotografía de Matrimonios y Parejas</p>
+    <p class="frase">Capturo energía y emoción en su estado más auténtico, una manera de narrar lo invisible y transformar instantes en recuerdos que se sienten.</p>
+  </div>
+
+  <div class="bloque">
+    <h2>Paquetes matrimonio civil</h2>
+    <table>
+      <thead>
+        <tr><th scope="col">Cobertura</th><th scope="col">2 horas</th><th scope="col">3 horas</th></tr>
+      </thead>
+      <tbody>
+        <tr class="neto"><th scope="row">Valor neto</th><td data-final="180000"></td><td data-final="270000"></td></tr>
+        <tr class="iva"><th scope="row">IVA (19%)</th><td data-iva></td><td data-iva></td></tr>
+        <tr class="total"><th scope="row">Total</th><td data-total></td><td data-total></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bloque">
+    <h2>Paquetes matrimonio</h2>
+    <table>
+      <thead>
+        <tr><th scope="col">Cobertura</th><th scope="col">8 horas</th><th scope="col">10 horas</th></tr>
+      </thead>
+      <tbody>
+        <tr class="neto"><th scope="row">Valor neto</th><td data-neto="600000"></td><td data-neto="720000"></td></tr>
+        <tr class="iva"><th scope="row">IVA (19%)</th><td data-iva></td><td data-iva></td></tr>
+        <tr class="total"><th scope="row">Total</th><td data-total></td><td data-total></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="extras">
+    <h2 class="izq">Add-ons</h2>
+    <p>Hora adicional (desde las 8 horas): <strong>$60.000 + IVA</strong> (total $71.400).</p>
+    <p>Sesión Pre Boda: <strong>$90.000</strong> la hora, IVA incluido.</p>
+  </div>
+
+  <p class="pie-precios">Valores netos + IVA (19%). El total es lo que paga el cliente.</p>
+
+  <p class="reservar">
+    Para consultar disponibilidad, escríbeme por
+    <a href="https://instagram.com/camilaescandarweddings" target="_blank" rel="noopener">Instagram</a>.
+    <!-- Si quieres agregar WhatsApp, pega aquí:
+         o por <a href="https://wa.me/56912345678">WhatsApp</a>. -->
+  </p>
+</section>
+</main>
+
+<script>
+  // Calcula neto, IVA y total a partir de data-neto o data-final.
+  (function () {
+    var peso = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
+    document.querySelectorAll('table').forEach(function (tabla) {
+      var celdas = tabla.querySelectorAll('[data-neto], [data-final]');
+      var ivas = tabla.querySelectorAll('[data-iva]');
+      var totales = tabla.querySelectorAll('[data-total]');
+      celdas.forEach(function (celda, i) {
+        var neto, iva, total;
+        if (celda.hasAttribute('data-final')) {
+          total = Number(celda.getAttribute('data-final'));
+          neto = Math.round(total / 1.19);
+          iva = total - neto;
+        } else {
+          neto = Number(celda.getAttribute('data-neto'));
+          iva = Math.round(neto * 0.19);
+          total = neto + iva;
+        }
+        celda.textContent = peso.format(neto);
+        if (ivas[i]) ivas[i].textContent = peso.format(iva);
+        if (totales[i]) totales[i].textContent = peso.format(total);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
